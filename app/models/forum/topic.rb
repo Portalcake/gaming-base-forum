@@ -16,6 +16,8 @@ module Forum
 
     accepts_nested_attributes_for :posts, :reject_if => :all_blank
 
+    after_create :update_last_post_information!
+
     def update_last_post_information!
       last_post = self.posts.last
       if last_post
