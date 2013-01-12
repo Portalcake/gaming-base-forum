@@ -50,6 +50,8 @@ module Forum
       @post = Post.find(params[:id])
       authorize!(:destroy, @post)
       @post.destroy
+      
+      @post.topic.update_last_post_information!
 
       respond_to do |format|
         format.html { redirect_to @post.topic, notice: 'Post was successfully deleted.' }

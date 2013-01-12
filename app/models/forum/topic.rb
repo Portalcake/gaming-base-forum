@@ -17,9 +17,15 @@ module Forum
     accepts_nested_attributes_for :posts, :reject_if => :all_blank
 
     def update_last_post_information!
-      self.last_post_at = self.posts.last.created_at
-      self.last_user = self.posts.last.user
-      self.save
+      last_post = self.posts.last
+      if last_post
+        self.last_post_at = last_post.created_at
+        self.last_user = last_post.user
+        self.save
+      else
+        #no posts left: 3-2-1 self-destruction!
+        self.destroy
+      end
     end
 
     def to_s
