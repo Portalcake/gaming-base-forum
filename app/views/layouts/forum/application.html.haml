@@ -1,0 +1,18 @@
+- content_for :header do
+  Forum
+- title("Forum")
+
+- content_for :javascripts do
+  = javascript_include_tag "forum/application"
+- content_for :stylesheets do
+  = stylesheet_link_tag "forum/application", :media => "all"
+
+- content_for :main_navigation do
+  = render_navigation :level => 1, &forum_build_page_navigation
+- content_for :sub_navigation do
+  = (render_navigation :level => 2, &forum_build_page_navigation) || content_tag(:div)
+
+- content_for :content do
+  = yield
+
+= render :template => 'layouts/application'

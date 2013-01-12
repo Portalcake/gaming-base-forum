@@ -1,0 +1,15 @@
+.post {
+  padding:5px;
+  margin-bottom:5px;
+  border-radius: 3px;
+  .author {
+    .gravatar {
+      float:left;
+      padding-right:5px;
+    }
+    min-height:40px;
+  }
+  .modtools {
+    float:right;
+  }
+}

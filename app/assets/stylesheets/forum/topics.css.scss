@@ -1,0 +1,7 @@
+.topic {
+  padding:3px;
+  margin-bottom:5px;
+  border-radius: 3px;
+  .title { font-weight: bold; }
+  & .last_reply, & .created_by { float:right; }
+}

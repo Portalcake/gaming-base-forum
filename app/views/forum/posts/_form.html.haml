@@ -1,0 +1,7 @@
+%div In reply to: #{@post.topic.title}
+= semantic_form_for([@post.topic, @post]) do |f|
+  = f.inputs :content
+  = f.actions do 
+    = f.action :submit, :button_html => { :disable_with => 'Working...' }
+    = f.action :cancel
+

@@ -1,0 +1,7 @@
+.topic[topic]{:class=>cycle("odd", "even")}
+  .created_by Created by #{topic.user}, #{l topic.created_at, :format=>:short}
+  .title= link_to topic.title, topic
+  .last_reply
+    - last_post = topic.posts.last
+    Last reply by #{topic.last_user}, #{l topic.last_post_at, :format=>:short}
+  .reply_amount= pluralize topic.posts_count, "Reply"

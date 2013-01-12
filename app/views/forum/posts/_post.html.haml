@@ -1,0 +1,23 @@
+.post[post]{:class=>cycle("odd", "even")}
+  .modtools
+    - if user_can? :edit, post
+      = link_to_unless_current 'Edit',
+          edit_topic_post_path(post.topic, post),
+          :class=>["icon", "icon-edit"], :title=>"Edit"
+    - if user_can? :destroy, post
+      = link_to 'Delete', [post.topic, post],
+          method: :delete,
+          data: { confirm: 'Are you sure?' },
+          :class=>["icon", "image-destroy"], :title=>"Delete"
+
+  .author
+    .gravatar= image_tag gravatar(post.user.email)
+    Written by #{post.user}
+
+    .published=l post.created_at
+    - if post.created_at < post.updated_at
+      .updated
+        Last edited:
+        =l post.updated_at
+
+  .content= simple_format post.content

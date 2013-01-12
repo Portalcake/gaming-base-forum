@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  user: 
+  last_user_id: 1
+  last_post_at: 2013-01-12 12:10:07
+  closed: false
+
+two:
+  title: MyString
+  user: 
+  last_user_id: 1
+  last_post_at: 2013-01-12 12:10:07
+  closed: false

@@ -1,0 +1,12 @@
+%h2 Topic: #{@topic.title}
+
+= render @posts
+= render "share/pagination", :entries => @posts
+
+.box
+  %span.title Quickform: Post a reply
+  .reply_form
+    - if user_can?(:create, Forum::Post)
+      = render "forum/posts/quickform"
+    - else
+      You need to be logged in to post.
