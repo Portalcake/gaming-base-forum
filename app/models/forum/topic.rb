@@ -30,6 +30,11 @@ module Forum
       end
     end
 
+    def count_view!
+      self.increment(:views_count)
+      self.save
+    end
+
     def to_s
       "#{self.title}"
     end

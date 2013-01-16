@@ -12,6 +12,7 @@ module Forum
     def show
       @topic = Topic.find(params[:id])
       @posts = @topic.posts.page(params[:page])
+      @topic.count_view!
       respond_with
     end
 

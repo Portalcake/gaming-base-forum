@@ -4,4 +4,6 @@
   .last_reply
     - last_post = topic.posts.last
     Last reply by #{topic.last_user}, #{l topic.last_post_at, :format=>:short}
-  .reply_amount= pluralize (topic.posts_count-1), "Reply"
+  .statistics
+    #{pluralize (topic.posts_count-1), "Reply"},
+    = pluralize (topic.views_count), "View"
