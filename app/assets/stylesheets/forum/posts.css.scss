@@ -7,9 +7,21 @@
       float:left;
       padding-right:5px;
     }
-    min-height:40px;
+    overflow: auto;
   }
   .modtools {
     float:right;
+  }
+  .content {
+    padding-top: 5px;
+  }
+}
+
+form#new_post.formtastic {
+  & .input .inline-hints {
+    margin-left:0;
+  }
+  & .actions {
+    padding-left: 0px;
   }
 }

@@ -20,4 +20,4 @@
         Last edited:
         =l post.updated_at
 
-  .content= simple_format post.content
+  .content= post.content.bbcode_to_html.html_safe

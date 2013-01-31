@@ -1,5 +1,5 @@
 = semantic_form_for([@topic, @topic.posts.build]) do |f|
   = f.inputs do 
-    = f.input :content, :label=>false
+    = f.input :content, :label=>false, :hint=>"You may use BBCode like [b], [url] and so on."
   = f.actions do 
     = f.action :submit, :button_html => { :disable_with => 'Working...' }

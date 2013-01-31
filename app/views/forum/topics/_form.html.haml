@@ -3,7 +3,7 @@
 
   = f.semantic_fields_for @post do |t|
     = t.inputs do
-      = t.input :content, :as => :text, :input_html => { :rows => 10 }
+      = t.input :content, :as => :text, :input_html => { :rows => 10 }, :hint=>"You may use BBCode like [b], [url] and so on."
 
   = f.actions do 
     = f.action :submit, :button_html => { :disable_with => 'Working...' }
